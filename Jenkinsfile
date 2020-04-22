@@ -26,28 +26,9 @@ pipeline {
         stage ('Build') {
             steps {
                 // build
-                //mavenBuild();
-                GrandleBuild();
+                mavenBuild();
             }
     }
-        stage('deploy to Dev'){
-
-        }
-
-        stage('scanner'){
-                //
-        }
-
-        Stage{"pushing maven repo"} {
-            //
-        }
-
-//        stage ("Image Tagging"){
-//
-//                }
-//        stage('deploy to QA'){
-//
-//        }
 
     }
     post {
