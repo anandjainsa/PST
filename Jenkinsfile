@@ -28,12 +28,12 @@ pipeline {
                 // build
                 mavenBuild();
             }
-    }
+        }
 
     }
     post {
         always {
-            sendNotifications currentBuild.result
+            sendNotifications("currentBuild.result")
         }
     }
 }
