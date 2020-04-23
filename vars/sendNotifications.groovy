@@ -27,7 +27,7 @@ def call(String buildStatus = 'STARTED') {
     // Send notifications
 
     emailext (
-            to: 'crewpro.dev@pstechnology.com',
+            to: 'anandjainsa@gmail.com',
             subject: subject,
             body: details,
             recipientProviders: [[$class: 'DevelopersRecipientProvider']]
