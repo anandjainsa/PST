@@ -29,7 +29,12 @@ pipeline {
                 mavenBuild();
             }
         }
-
+        stage('Deploy to Tomcat'){
+      
+            sshagent(['tomcat-dev']) {
+             sh 'scp -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
+      }
+   }
     }
     post {
         always {
