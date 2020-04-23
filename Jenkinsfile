@@ -38,7 +38,7 @@ pipeline {
         stage('Deploy to Tomcat'){
             steps {
                   sshagent(['my-ssh-key']) {
-                  sh 'scp -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
+                  sh 'scp -rv -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
             }
        }
    }
